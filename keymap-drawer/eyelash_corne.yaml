@@ -1,6 +1,6 @@
 layout: {zmk_keyboard: eyelash_corne}
 layers:
-  QWERTY:
+  Base:
   - $$mdi:keyboard-tab$$
   - Q
   - W
@@ -14,7 +14,7 @@ layers:
   - O
   - P
   - {t: '$$mdi:backspace$$', type: backspace}
-  - '&td0'
+  - '&Shift_Caps'
   - A
   - S
   - D
@@ -197,19 +197,19 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
 combos:
-- p: [10, 11]
+- p: [11, 12]
   k: $$mdi:backspace-reverse-outline$$
 - p: [3, 4]
   k: Sft+8
-- p: [23, 22]
+- p: [26, 27]
   k: Alt+Ctl+$$mdi:backspace-reverse-outline$$
-- p: [3, 2]
+- p: [2, 3]
   k: Ctl+C
-- p: [15, 14]
+- p: [15, 16]
   k: Ctl+V
-- p: [25, 26]
+- p: [29, 30]
   k: {t: V, h: '$$mdi:apple-keyboard-command$$'}
-- p: [29, 28]
+- p: [32, 33]
   k: Sft+Ctl+$$mdi:arrow-down-bold$$
-- p: [30, 31]
+- p: [36, 37]
   k: Alt+Ctl+,
