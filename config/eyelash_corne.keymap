@@ -28,13 +28,34 @@
 
 / {
     behaviors {
-        td0: td0 {
-            compatible = "zmk,behavior-tap-dance";
-            display-name = "Shift/Caps Lock Tap Dance";
-            #binding-cells = <0>;
-            bindings = <&kp LEFT_SHIFT>, <&kp CAPS>;
+        hm: homerow_mods {
+          compatible = "zmk,behavior-hold-tap";
+          label = "HOMEROW_MODS";
+          #binding-cells = <2>;
+          tapping-term-ms = <200>;
+          quick-tap-ms = <125>;
+          flavor = "tap-preferred";
+          bindings = <&kp>, <&kp>;
         };
-    };
+    
+        mo_to: mo_to {
+          compatible = "zmk,behavior-hold-tap";
+          label = "MO_TO";
+          #binding-cells = <2>;
+          tapping-term-ms = <200>;
+          quick-tap-ms = <125>;
+          flavor = "tap-preferred";
+          bindings = <&mo>, <&to>;
+        };
+    
+        Shift_Caps: Shift_Caps {
+          compatible = "zmk,behavior-tap-dance";
+          label = "SHIFT_CAPS";
+          #binding-cells = <0>;
+          bindings = <&kp LEFT_SHIFT>, <&kp CLCK>;
+        };
+      };
+
 
     rgb_encoder: rgb_encoder {
         compatible = "zmk,behavior-sensor-rotate";
@@ -55,7 +76,7 @@
     
         delete {
           bindings = <&kp DEL>;
-          key-positions = <10 11>;
+          key-positions = <11 12>;
         };
     
         Star {
@@ -65,32 +86,32 @@
     
         Ctrl_Atl_Del {
           bindings = <&kp LA(LC(DEL))>;
-          key-positions = <23 22>;
+          key-positions = <26 27>;
         };
     
         Copy {
           bindings = <&kp LC(C)>;
-          key-positions = <3 2>;
+          key-positions = <2 3>;
         };
     
         Paste {
           bindings = <&kp LC(V)>;
-          key-positions = <15 14>;
+          key-positions = <15 16>;
         };
     
         WIN_V {
           bindings = <&kp LG(V)>;
-          key-positions = <25 26>;
+          key-positions = <29 30>;
         };
     
         excel_downrows {
           bindings = <&kp LS(LC(DOWN_ARROW))>;
-          key-positions = <29 28>;
+          key-positions = <32 33>;
         };
     
         symbol {
           bindings = <&kp LA(LC(COMMA))>;
-          key-positions = <30 31>;
+          key-positions = <36 37>;
         };
       };
 
@@ -121,10 +142,10 @@
         compatible = "zmk,keymap";
 
         default_layer {
-            display-name = "QWERTY";
+            display-name = "Base";
             bindings = <
 &kp TAB    &kp Q  &kp W  &kp E     &kp R  &kp T                               &kp UP                &kp Y        &kp U  &kp I      &kp O    &kp P     &kp BSPC
-&td0       &kp A  &kp S  &kp D     &kp F  &kp G                     &kp LEFT  &kp ENTER  &kp RIGHT  &kp H        &kp J  &kp K      &kp L    &kp SEMI  &kp SQT
+&Shift_Caps       &kp A  &kp S  &kp D     &kp F  &kp G                     &kp LEFT  &kp ENTER  &kp RIGHT  &kp H        &kp J  &kp K      &kp L    &kp SEMI  &kp SQT
 &kp LCTRL  &kp Z  &kp X  &kp C     &kp V  &kp B        &kp SPACE              &kp DOWN              &kp N        &kp M  &kp COMMA  &kp DOT  &kp FSLH  &kp ESC
                          &kp LGUI  &mo 1  &lt 3 SPACE                                               &lt 3 ENTER  &mo 2  &kp RALT
             >;
