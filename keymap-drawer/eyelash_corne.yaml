@@ -79,7 +79,7 @@ layers:
   - {t: '0', s: )}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
-  - Setting
+  - FN
   - {t: '$$mdi:transfer$$', type: trans}
   - Ctl+Gui+$$mdi:arrow-left-bold$$
   - Ctl+Gui+$$mdi:arrow-right-bold$$
@@ -113,10 +113,10 @@ layers:
   - )
   - {t: /, s: '?'}
   - CLCK
-  - END
-  - HOME
-  - PgDn
-  - PgUp
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:menu-left$$', s: '$$mdi:mouse$$'}
   - $$mdi:mouse-left-click-outline$$
@@ -134,7 +134,7 @@ layers:
   - {t: V, h: '$$mdi:apple-keyboard-command$$'}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
-  - RGB SPI
+  - {t: '$$mdi:menu-down$$', s: '$$mdi:mouse$$'}
   - _
   - +
   - '{'
@@ -161,7 +161,7 @@ layers:
   - KP 9
   - {t: /, s: '?'}
   - {t: '$$mdi:backspace$$', type: backspace}
-  - Setting
+  - {t: Setting, h: FN}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - $$mdi:arrow-left-bold$$
   - $$mdi:arrow-down-bold$$
@@ -196,6 +196,55 @@ layers:
   - {t: '0', s: )}
   - {t: Base, h: toggle}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
+  FN:
+  - {t: '$$mdi:transfer$$', type: trans}
+  - Ctl+Sft+$$mdi:keyboard-space$$
+  - {t: '$$mdi:transfer$$', type: trans}
+  - $$mdi:printer-outline$$
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {h: '2', s: '$$mdi:bluetooth-connect$$'}
+  - '>'
+  - KP NUMLOCK
+  - {t: /, s: '?'}
+  - '*'
+  - Sft+Ctl+W
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {type: held alternate}
+  - {t: D, h: '$$mdi:apple-keyboard-command$$'}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - INS
+  - HOME
+  - PG UP
+  - {h: '4', s: '$$mdi:bluetooth-connect$$'}
+  - {h: '1', s: '$$mdi:bluetooth-connect$$'}
+  - {h: '5', s: '$$mdi:bluetooth-connect$$'}
+  - <
+  - (
+  - )
+  - +
+  - Ctl+W
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: Base, h: toggle}
+  - {type: held}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - $$mdi:backspace-reverse-outline$$
+  - END
+  - PG DN
+  - $$mdi:bluetooth-off$$
+  - {h: '3', s: '$$mdi:bluetooth-connect$$'}
+  - {t: '''', s: '"'}
+  - ':'
+  - '%'
+  - {t: '-', s: _}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {type: held}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '=', s: +}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
   Setting:
   - '&studio_unlock'
   - OUT USB
@@ -210,7 +259,7 @@ layers:
   - F9
   - F10
   - F11
-  - {t: RGB OFF, type: held alternate}
+  - RGB OFF
   - {t: '$$mdi:transfer$$', type: trans}
   - $$mdi:mouse-left-click-outline$$
   - $$mdi:mouse-scroll-wheel$$
@@ -226,7 +275,7 @@ layers:
   - PRINTSCREEN
   - F12
   - RGB ON
-  - {t: '$$mdi:backup-restore$$', type: held}
+  - {t: '$$mdi:backup-restore$$', type: bootloader}
   - {t: '$$mdi:transfer$$', type: trans}
   - $$mdi:progress-download$$
   - {t: '$$mdi:transfer$$', type: trans}
@@ -240,7 +289,7 @@ layers:
   - SCROLLLOCK
   - PAUSE BREAK
   - {t: '$$mdi:transfer$$', type: trans}
-  - {type: held}
+  - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
