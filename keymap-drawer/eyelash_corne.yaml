@@ -196,3 +196,20 @@ layers:
   - {type: held alternate}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
+combos:
+- p: [10, 11]
+  k: $$mdi:backspace-reverse-outline$$
+- p: [3, 4]
+  k: Sft+8
+- p: [23, 22]
+  k: Alt+Ctl+$$mdi:backspace-reverse-outline$$
+- p: [3, 2]
+  k: Ctl+C
+- p: [15, 14]
+  k: Ctl+V
+- p: [25, 26]
+  k: {t: V, h: '$$mdi:apple-keyboard-command$$'}
+- p: [29, 28]
+  k: Sft+Ctl+$$mdi:arrow-down-bold$$
+- p: [30, 31]
+  k: Alt+Ctl+,
