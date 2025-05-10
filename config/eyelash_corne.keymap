@@ -193,10 +193,10 @@
          Function {
             display-name = "FN";
             bindings = <
-&trans  &kp LC(LS(SPACE))  &trans  &kp PSCRN  &trans     &trans                                  &bt BT_SEL 1                        &kp GREATER_THAN  &kp KP_NUMLOCK        &kp SLASH              &kp ASTERISK  &kp LS(LC(W))  &trans
-&trans  &kp LG(D)          &trans  &kp INS    &kp HOME   &kp PG_UP                 &bt BT_SEL 3  &bt BT_SEL 0    &bt BT_SEL 4        &kp LT            &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp PLUS      &kp LC(W)      &trans
-&to 0   &trans             &trans  &kp DEL    &kp END    &kp PG_DN  &bt BT_CLR                   &bt BT_SEL 2                        &kp SINGLE_QUOTE  &kp COLON             &kp PERCENT            &kp MINUS     &trans         &trans
-                                   &trans     &trans     &trans                                                                      &kp EQUAL         &trans                &trans
+&trans  &kp LC(LS(SPACE))  &trans  &kp PSCRN  &kp SCROLLLOCK     &kp PAUSE_BREAK                         &bt BT_SEL 1                        &kp GREATER_THAN  &kp KP_NUMLOCK        &kp SLASH              &kp ASTERISK  &kp LS(LC(W))  &trans
+&trans  &kp LG(D)          &trans  &kp INS    &kp HOME           &kp PG_UP                 &bt BT_SEL 3  &bt BT_SEL 0    &bt BT_SEL 4        &kp LT            &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp PLUS      &kp LC(W)      &trans
+&to 0   &trans             &trans  &kp DEL    &kp END            &kp PG_DN  &bt BT_CLR                   &bt BT_SEL 2                        &kp SINGLE_QUOTE  &kp COLON             &kp PERCENT            &kp MINUS     &trans         &trans
+                                   &trans     &trans             &trans                                                                      &kp EQUAL         &trans                &trans
             >;
 
             sensor-bindings = <&scroll_encoder>;
@@ -205,10 +205,10 @@
          Setting{
             display-name = "Setting";
             bindings = <
-&studio_unlock  &out OUT_USB      &out OUT_BLE     &kp F3       &kp F4     &kp F5                                  &rgb_ug RGB_EFF                      &kp F6       &kp F7     &kp F8       &kp F9      &kp F10          &kp F11
-&rgb_ug RGB_OFF          &trans      &mkp LCLK  &mkp MCLK    &mkp RCLK  &mkp MB4                 &rgb_ug RGB_EFR  &rgb_ug RGB_BRD    &rgb_ug RGB_BRI   &bootloader  &mkp LCLK  &mkp MCLK    &mkp RCLK   &kp PRINTSCREEN  &kp F12
-&rgb_ug RGB_ON         &sys_reset  &trans     &bootloader  &trans     &mkp MB5  &kp C_MUTE                        &rgb_ug RGB_SPI                      &trans       &trans     &bootloader  &sys_reset  &kp SCROLLLOCK   &kp PAUSE_BREAK
-                                       &trans       &trans     &trans                                                                                  &trans       &trans     &trans
+&studio_unlock      &out OUT_USB    &out OUT_BLE   &trans       &trans     &trans                                    &rgb_ug RGB_EFF                      &trans       &trans     &trans       &trans      &trans  &trans
+&rgb_ug RGB_OFF     &trans          &mkp LCLK      &mkp MCLK    &mkp RCLK  &mkp MB4                 &rgb_ug RGB_EFR  &rgb_ug RGB_BRD    &rgb_ug RGB_BRI   &bootloader  &mkp LCLK  &mkp MCLK    &mkp RCLK   &trans  &trans
+&rgb_ug RGB_ON      &sys_reset      &trans         &bootloader  &trans     &mkp MB5  &kp C_MUTE                      &rgb_ug RGB_SPI                      &trans       &trans     &bootloader  &sys_reset  &trans   &trans
+                                       &trans       &trans     &trans                                                                                     &trans       &trans     &trans
             >;
 
             sensor-bindings = <&scroll_encoder>;
