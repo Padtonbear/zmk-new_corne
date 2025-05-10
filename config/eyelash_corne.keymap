@@ -94,6 +94,28 @@
         };
       };
 
+    macros {
+        Calculator: Calculator {
+          compatible = "zmk,behavior-macro";
+          #binding-cells = <0>;
+          bindings = <&kp RG(S) &kp C &kp A &kp L &kp RET>;
+          label = "CALCULATOR";
+        };
+    
+        excel_bigword: excel_bigword {
+          compatible = "zmk,behavior-macro";
+          #binding-cells = <0>;
+          bindings = <&kp LA(H) &kp F &kp G>;
+          label = "EXCEL_BIGWORD";
+        };
+    
+        excel_smallword: excel_smallword {
+          compatible = "zmk,behavior-macro";
+          #binding-cells = <0>;
+          bindings = <&kp LA(H) &kp F &kp K>;
+          label = "EXCEL_SMALLWORD";
+        };
+      };
 
     keymap {
         compatible = "zmk,keymap";
