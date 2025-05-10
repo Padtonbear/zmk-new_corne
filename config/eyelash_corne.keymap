@@ -160,7 +160,7 @@
             bindings = <
 &kp F1  &kp F2  &kp F3  &kp F4            &kp F5             &kp F6                                   &mmv MOVE_UP                     &kp F7       &kp F8          &kp F9            &kp F10  &kp F11  &kp F12
 &trans  &kp N1  &kp N2  &kp N3            &kp N4             &kp N5                   &mmv MOVE_LEFT  &mkp LCLK    &mmv MOVE_RIGHT     &kp N6       &kp N7          &kp N8            &kp N9   &kp N0   &trans
-&trans  &mo 4   &trans  &kp LC(LG(LEFT))  &kp LC(LG(RIGHT))  &kp LG(TAB)  &kp C_MUTE                  &mmv MOVE_DOWN                   &Calculator  &excel_bigword  &excel_smallword  &trans   &trans   &trans
+&trans  &mo 3   &trans  &kp LC(LG(LEFT))  &kp LC(LG(RIGHT))  &kp LG(TAB)  &kp C_MUTE                  &mmv MOVE_DOWN                   &Calculator  &excel_bigword  &excel_smallword  &trans   &trans   &trans
                         &trans            &trans             &trans                                                                    &trans       &trans          &trans
             >;
 
