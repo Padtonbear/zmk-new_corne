@@ -171,8 +171,8 @@
             display-name = "Lower";
             bindings = <
 &trans               &kp EXCL  &kp AT    &kp HASH       &kp DLLR     &kp PRCNT                           &mmv MOVE_UP                      &kp CARET  &kp AMPS   &kp STAR  &kp LPAR  &kp RPAR  &kp SLASH
-&kp CLCK             &kp END   &kp HOME  &kp PAGE_DOWN  &kp PAGE_UP  &trans              &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT   &kp MINUS  &kp EQUAL  &kp LBKT  &kp RBKT  &kp BSLH  &kp GRAVE
-&hm LC(P) LC(LS(P))  &trans    &trans    &kp LC(X)      &kp LG(V)    &trans   &trans                     &rgb_ug RGB_SPI                   &kp UNDER  &kp PLUS   &kp LBRC  &kp RBRC  &kp PIPE  &kp TILDE
+&kp CLCK             &trans    &trans    &trans         &trans       &trans              &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT   &kp MINUS  &kp EQUAL  &kp LBKT  &kp RBKT  &kp BSLH  &kp GRAVE
+&hm LC(P) LC(LS(P))  &trans    &trans    &kp LC(X)      &kp LG(V)    &trans   &trans                     &mmv MOVE_DOWN                    &kp UNDER  &kp PLUS   &kp LBRC  &kp RBRC  &kp PIPE  &kp TILDE
                                          &trans         &trans       &kp SPACE                                                             &trans     &trans     &trans
             >;
 
@@ -182,10 +182,21 @@
         NumPad {
             display-name = "NumPad";
             bindings = <
-&kp TAB  &none  &none     &kp UP_ARROW  &none      &none                                        &mmv MOVE_UP                       &kp ESC     &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp SLASH  &kp BACKSPACE
-&mo 4    &none  &kp LEFT  &kp DOWN      &kp RIGHT  &none                        &mmv MOVE_LEFT  &mkp LCLK    &mmv MOVE_RIGHT       &none       &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp MINUS  &none
-&none    &none  &none     &none         &none      &kp COMMA    &kp C_MUTE                      &mmv MOVE_DOWN                     &kp PERIOD  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp STAR   &kp RET
+&kp TAB       &none  &none     &kp UP_ARROW  &none      &none                                        &mmv MOVE_UP                       &kp ESC     &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp SLASH  &kp BACKSPACE
+&mo_to 4 5    &none  &kp LEFT  &kp DOWN      &kp RIGHT  &none                        &mmv MOVE_LEFT  &mkp LCLK    &mmv MOVE_RIGHT       &none       &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp MINUS  &none
+&none         &none  &none     &none         &none      &kp COMMA    &kp C_MUTE                      &mmv MOVE_DOWN                     &kp PERIOD  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp STAR   &kp RET
                           &none         &kp LC(P)  &kp SPACE                                                                       &kp N0      &to 0            &none
+            >;
+
+            sensor-bindings = <&scroll_encoder>;
+        };
+         Function {
+            display-name = "FN";
+            bindings = <
+&trans  &kp LC(LS(SPACE))  &trans  &kp PSCRN  &trans     &trans                                  &bt BT_SEL 1                        &kp GREATER_THAN  &kp KP_NUMLOCK        &kp SLASH              &kp ASTERISK  &kp LS(LC(W))  &trans
+&trans  &kp LG(D)          &trans  &kp INS    &kp HOME   &kp PG_UP                 &bt BT_SEL 3  &bt BT_SEL 0    &bt BT_SEL 4        &kp LT            &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp PLUS      &kp LC(W)      &trans
+&to 0   &trans             &trans  &kp DEL    &kp END    &kp PG_DN  &bt BT_CLR                   &bt BT_SEL 2                        &kp SINGLE_QUOTE  &kp COLON             &kp PERCENT            &kp MINUS     &trans         &trans
+                                   &trans     &trans     &trans                                                                      &kp EQUAL         &trans                &trans
             >;
 
             sensor-bindings = <&scroll_encoder>;
@@ -194,7 +205,7 @@
          Setting{
             display-name = "Setting";
             bindings = <
-&studio_unlock  &out OUT_USB      &out OUT_BLE     &kp F3       &kp F4     &kp F5                                             &rgb_ug RGB_EFF                      &kp F6       &kp F7     &kp F8       &kp F9      &kp F10          &kp F11
+&studio_unlock  &out OUT_USB      &out OUT_BLE     &kp F3       &kp F4     &kp F5                                  &rgb_ug RGB_EFF                      &kp F6       &kp F7     &kp F8       &kp F9      &kp F10          &kp F11
 &rgb_ug RGB_OFF          &trans      &mkp LCLK  &mkp MCLK    &mkp RCLK  &mkp MB4                 &rgb_ug RGB_EFR  &rgb_ug RGB_BRD    &rgb_ug RGB_BRI   &bootloader  &mkp LCLK  &mkp MCLK    &mkp RCLK   &kp PRINTSCREEN  &kp F12
 &rgb_ug RGB_ON         &sys_reset  &trans     &bootloader  &trans     &mkp MB5  &kp C_MUTE                        &rgb_ug RGB_SPI                      &trans       &trans     &bootloader  &sys_reset  &kp SCROLLLOCK   &kp PAUSE_BREAK
                                        &trans       &trans     &trans                                                                                  &trans       &trans     &trans
