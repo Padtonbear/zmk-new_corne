@@ -176,7 +176,7 @@
             display-name = "Lower";
             bindings = <
 &trans               &kp EXCL  &kp AT    &kp HASH       &kp DLLR     &kp PRCNT                           &mmv MOVE_UP                      &kp CARET  &kp AMPS   &kp STAR  &kp LPAR  &kp RPAR  &kp SLASH
-&kp CLCK             &trans    &trans    &trans         &trans       &trans              &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT   &kp MINUS  &kp EQUAL  &kp LBKT  &kp RBKT  &kp BSLH  &kp GRAVE
+&kp CLCK             &trans    &trans    &trans         &trans       &trans              &mmv MOVE_LEFT  &mkp LCLK      &mmv MOVE_RIGHT   &kp MINUS  &kp EQUAL  &kp LBKT  &kp RBKT  &kp BSLH  &kp GRAVE
 &hm LC(P) LC(LS(P))  &trans    &trans    &kp LC(X)      &kp LG(V)    &trans   &trans                     &mmv MOVE_DOWN                    &kp UNDER  &kp PLUS   &kp LBRC  &kp RBRC  &kp PIPE  &kp TILDE
                                          &trans         &trans       &kp SPACE                                                             &trans     &trans     &trans
             >;
