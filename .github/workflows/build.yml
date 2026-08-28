@@ -7,5 +7,8 @@ on:
 
 jobs:
   build:
-    uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@main
-
+    uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@v0.3.0
+    secrets: inherit
+    # 加入下方這行，強制允許使用當前安全的 Node 執行環境，解決舊版套件的警告
+    env:
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
