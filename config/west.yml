@@ -4,22 +4,14 @@ manifest:
       url-base: https://github.com/zmkfirmware
     - name: cormoran
       url-base: https://github.com/cormoran
-
   projects:
     - name: eyelash_corne
       url: https://github.com/a741725193/zmk-new_corne
       revision: main
-    # 1. 將 zmk 專案的 revision 與 import 欄位，更新為您想加入的新版功能分支與設定
     - name: zmk
       remote: cormoran
-      revision: main+custom-studio-protocol
-      import:
-        file: app/west.yml
-    # 2. 額外追加您要引入的運行時巨集（Runtime Macro）模組專案
-    - name: zmk-feature-runtime-macro
-      remote: cormoran
-      revision: main
-    # 3. 以下保留您原本睫毛外設所需的所有特殊硬體功能模組
+      revision: v0.3-branch+dya
+      import: app/west.yml
     - name: zmk-behavior-runtime-sensor-rotate
       remote: cormoran
       revision: main
@@ -35,6 +27,5 @@ manifest:
     - name: zmk-module-runtime-input-processor
       remote: cormoran
       revision: zmk-v0.3.0.0
-
   self:
     path: config
