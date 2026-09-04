@@ -45,7 +45,7 @@
           tapping-term-ms = <200>;
           quick-tap-ms = <125>;
           flavor = "tap-preferred";
-          bindings = <&mo>, <&to>;
+          bindings = <&mo>, <&to_notify>; // 關鍵：改用我們新創造的 to_notify
         };
     
         Shift_Caps: Shift_Caps {
@@ -67,6 +67,17 @@
             bindings = <&msc SCRL_DOWN>, <&msc SCRL_UP>;
     
             tap-ms = <100>;
+        };
+        to_notify: to_notify {
+            compatible = "zmk,behavior-macro-one-param";
+            #binding-cells = <1>; // 接收一個參數（Layer 編號）
+            wait-ms = <10>;
+            tap-ms = <10>;
+            bindings
+                // 1. 根據傳入的 Layer 編號，動態發送對應的 F13-F19
+                = <&macro_param_1to2 &kp F13> 
+                // 2. 動態切換到該 Layer
+                , <&macro_param_1to1 &to 0>; 
         };
       };
 
@@ -152,7 +163,7 @@
             bindings = <
 &kp TAB        &kp Q      &kp W     &kp E      &kp R       &kp T                               &kp UP                &kp Y    &kp U  &kp I      &kp O    &kp P     &kp BSPC
 &Shift_Caps    &kp A      &kp S     &kp D      &kp F       &kp G                     &kp LEFT  &kp ENTER  &kp RIGHT  &kp H    &kp J  &kp K      &kp L    &kp SEMI  &hm RIGHT_SHIFT APOS
-&kp LCTRL      &kp Z      &kp X     &kp C      &kp V       &kp B        &to 6                  &kp DOWN              &kp N    &kp M  &kp COMMA  &kp DOT  &kp FSLH  &hm DEL ESC
+&kp LCTRL      &kp Z      &kp X     &kp C      &kp V       &kp B        &to_notify 6           &kp DOWN              &kp N    &kp M  &kp COMMA  &kp DOT  &kp FSLH  &hm DEL ESC
                                     &kp LALT   &mo_to 1 6  &kp SPACE                                                 &kp RET  &mo_to 2 3        &kp RIGHT_GUI
             >;
 
@@ -190,7 +201,7 @@
 &kp TAB       &none  &none     &kp UP_ARROW  &none      &none                                        &mmv MOVE_UP                       &kp ESC     &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp SLASH  &kp BACKSPACE
 &mo_to 4 5    &none  &kp LEFT  &kp DOWN      &kp RIGHT  &none                        &mmv MOVE_LEFT  &mkp LCLK    &mmv MOVE_RIGHT       &none       &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp MINUS  &none
 &none         &none  &none     &none         &none      &kp COMMA    &kp C_MUTE                      &mmv MOVE_DOWN                     &kp PERIOD  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp STAR   &kp RET
-                          &none         &kp LC(P)  &kp SPACE                                                                            &kp N0      &to 0            &none
+                          &none         &kp LC(P)  &kp SPACE                                                                            &kp N0      &to_notify 0     &none
             >;
 
             sensor-bindings = <&scroll_encoder>;
@@ -199,10 +210,10 @@
          Function {
             display-name = "FN";
             bindings = <
-&trans  &kp LC(LS(SPACE))  &trans  &kp PSCRN  &kp SCROLLLOCK     &kp PAUSE_BREAK                         &bt BT_SEL 1                        &kp GREATER_THAN  &kp KP_NUMLOCK        &kp SLASH              &kp ASTERISK  &kp LS(LC(W))  &trans
-&trans  &kp LG(D)          &trans  &kp INS    &kp HOME           &kp PG_UP                 &bt BT_SEL 2  &bt BT_SEL 0    &bt BT_SEL 4        &kp LT            &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp PLUS      &kp LC(W)      &trans
-&to 0   &trans             &trans  &kp DEL    &kp END            &kp PG_DN  &bt BT_CLR                   &bt BT_SEL 3                        &kp SINGLE_QUOTE  &kp COLON             &kp PERCENT            &kp MINUS     &trans         &trans
-                                   &trans     &trans             &trans                                                                      &kp EQUAL         &trans                &trans
+&trans        &kp LC(LS(SPACE))  &trans  &kp PSCRN  &kp SCROLLLOCK     &kp PAUSE_BREAK                         &bt BT_SEL 1                        &kp GREATER_THAN  &kp KP_NUMLOCK        &kp SLASH              &kp ASTERISK  &kp LS(LC(W))  &trans
+&trans        &kp LG(D)          &trans  &kp INS    &kp HOME           &kp PG_UP                 &bt BT_SEL 2  &bt BT_SEL 0    &bt BT_SEL 4        &kp LT            &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp PLUS      &kp LC(W)      &trans
+&to_notify 0  &trans             &trans  &kp DEL    &kp END            &kp PG_DN  &bt BT_CLR                   &bt BT_SEL 3                        &kp SINGLE_QUOTE  &kp COLON             &kp PERCENT            &kp MINUS     &trans         &trans
+                                &trans   &trans     &trans                                                                                         &kp EQUAL         &trans                &trans
             >;
 
             sensor-bindings = <&scroll_encoder>;
@@ -213,8 +224,8 @@
             bindings = <
 &studio_unlock      &out OUT_USB    &out OUT_BLE   &trans       &trans     &trans                                 &rgb_ug RGB_SPD                       &trans       &trans     &trans       &trans      &trans  &trans
 &rgb_ug RGB_OFF     &trans          &trans         &trans       &trans     &trans                 &rgb_ug RGB_EFR  &none             &rgb_ug RGB_EFF    &bootloader  &mkp LCLK  &mkp MCLK    &mkp RCLK   &trans  &trans
-&rgb_ug RGB_ON      &sys_reset      &trans         &bootloader  &trans     &trans  &to 0                           &rgb_ug RGB_SPI                      &trans       &trans     &bootloader  &sys_reset  &trans   &to 0
-                                                   &trans       &trans     &to 0                                                                        &trans       &trans     &trans
+&rgb_ug RGB_ON      &sys_reset      &trans         &bootloader  &trans     &trans  &to_notify 0                           &rgb_ug RGB_SPI                      &trans       &trans     &bootloader  &sys_reset  &trans   &to_notify 0
+                                                   &trans       &trans     &to_notify 0                                                                        &trans       &trans     &trans
             >;
 
             sensor-bindings = <&rgb_encoder>;
@@ -225,8 +236,8 @@
             bindings = <
 &kp TAB        &none    &Double_click    &none      &none      &none                                   &mmv MOVE_UP                     &none      &none     &kp UP_ARROW   &none      &none  &kp BACKSPACE
 &Shift_Caps    &none    &mkp LCLK        &mkp MCLK  &mkp RCLK  &none                   &mmv MOVE_LEFT  &mkp LCLK    &mmv MOVE_RIGHT     &none      &kp LEFT  &kp DOWN       &kp RIGHT  &none  &none
-&kp LCTRL      &none    &none            &none      &none      &none  &to 0                            &mmv MOVE_DOWN                   &none      &none     &none          &none      &none  &none
-                                         &none      &to 0      &none                                                                        &kp RET    &to 0     &none 
+&kp LCTRL      &none    &none            &none      &none      &none  &to_notify 0                            &mmv MOVE_DOWN                   &none      &none     &none          &none      &none  &none
+                                         &none      &to_notify 0      &none                                                                        &kp RET    &to_notify 0     &none 
             >;
 
             sensor-bindings = <&scroll_encoder>;
