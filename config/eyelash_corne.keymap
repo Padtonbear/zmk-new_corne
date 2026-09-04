@@ -68,15 +68,18 @@
     
             tap-ms = <100>;
         };
+
         to_notify: to_notify {
             compatible = "zmk,behavior-macro-one-param";
-            #binding-cells = <1>; // 接收一個參數（Layer 編號）
+            #binding-cells = <1>; 
             wait-ms = <10>;
             tap-ms = <10>;
             bindings
-                // 1. 根據傳入的 Layer 編號，動態發送對應的 F13-F19
-                = <&macro_param_1to2 &kp F13> 
-                // 2. 動態切換到該 Layer
+                // 1. 先按下 Ctrl + Shift + Alt + Win，並動態加上你傳入的 Layer 數字鍵
+                = <&macro_press &kp LCTRL &kp LSHIFT &kp LALT &kp LGUI>
+                , <&macro_param_1to1 &macro_tap &kp N0>
+                , <&macro_release &kp LCTRL &kp LSHIFT &kp LALT &kp LGUI>
+                // 2. 接著執行真正的 Layer 切換
                 , <&macro_param_1to1 &to 0>; 
         };
       };
