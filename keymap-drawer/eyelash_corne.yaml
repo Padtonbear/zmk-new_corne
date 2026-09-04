@@ -35,7 +35,7 @@ layers:
   - C
   - V
   - B
-  - '&to_notify 6'
+  - {t: Mouse, h: toggle}
   - $$mdi:arrow-down-bold$$
   - N
   - M
@@ -44,10 +44,10 @@ layers:
   - {t: /, s: '?'}
   - {t: '$$mdi:keyboard-esc$$', h: '$$mdi:backspace-reverse-outline$$'}
   - $$mdi:apple-keyboard-option$$
-  - {t: '&to_notify 6', h: Raise}
+  - {t: Mouse, h: Raise}
   - $$mdi:keyboard-space$$
   - {t: '$$mdi:keyboard-return$$', type: enter}
-  - {t: '&to_notify 3', h: Lower}
+  - {t: NumPad, h: Lower}
   - RIGHT GUI
   Raise:
   - F1
@@ -161,7 +161,7 @@ layers:
   - KP 9
   - {t: /, s: '?'}
   - {t: '$$mdi:backspace$$', type: backspace}
-  - {t: '&to_notify 5', h: FN}
+  - {t: Setting, h: FN}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - $$mdi:arrow-left-bold$$
   - $$mdi:arrow-down-bold$$
@@ -194,7 +194,7 @@ layers:
   - Ctl+P
   - $$mdi:keyboard-space$$
   - {t: '0', s: )}
-  - '&to_notify'
+  - {t: Base, h: toggle}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   FN:
   - {t: '$$mdi:transfer$$', type: trans}
@@ -225,7 +225,7 @@ layers:
   - +
   - Ctl+W
   - {t: '$$mdi:transfer$$', type: trans}
-  - '&to_notify'
+  - {t: Base, h: toggle}
   - {type: held}
   - {t: '$$mdi:transfer$$', type: trans}
   - $$mdi:backspace-reverse-outline$$
@@ -280,17 +280,17 @@ layers:
   - $$mdi:progress-download$$
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
-  - '&to_notify'
+  - {t: Base, h: toggle}
   - RGB SPI
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - $$mdi:progress-download$$
   - {t: '$$mdi:backup-restore$$', type: bootloader}
   - {t: '$$mdi:transfer$$', type: trans}
-  - '&to_notify'
+  - {t: Base, h: toggle}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
-  - '&to_notify'
+  - {t: Base, h: toggle}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
@@ -329,7 +329,7 @@ layers:
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - '&to_notify'
+  - {t: Base, h: toggle}
   - {t: '$$mdi:menu-down$$', s: '$$mdi:mouse$$'}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
@@ -338,10 +338,10 @@ layers:
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - '&to_notify'
+  - {t: Base, h: toggle}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:keyboard-return$$', type: enter}
-  - '&to_notify'
+  - {t: Base, h: toggle}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
 combos:
 - p: [11, 12]
